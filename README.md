@@ -10,3 +10,4 @@ Available Server
 - 🇸🇬 Melbicom [On]
 
 Salin Link ini di Aplikasi Clash Meta For Android
+> https://raw.githubusercontent.com/stealth-sr/config/vpn/yamete.yaml
