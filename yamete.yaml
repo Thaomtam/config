@@ -48,12 +48,7 @@ dns:
     - 8.8.8.8
     - 8.8.4.4
   use-hosts: true
-  enhanced-mode: redir-host # fake-ip 
-  # fake-ip-range: 198.18.0.1/16
-  # fake-ip-filter:
-    # - '+.whatsapp.net'
-    # - '+.whatsapp.com'
-    # - '+.whatsapp.org'
+  enhanced-mode: redir-host
   nameserver:
     - 8.8.8.8
     - 8.8.4.4
@@ -71,9 +66,10 @@ dns:
       - gfw
 
 proxies:
+# Vless
   - name: 🇮🇩 Atha
     type: vless
-    server: 104.21.21.147
+    server: 104.20.74.141
     port: 80
     uuid: 46c96808-0bbc-4a95-f52c-a5da19809c6f
     udp: true
@@ -88,7 +84,7 @@ proxies:
 
   - name: 🇮🇩 Connectindo
     type: vless
-    server: 104.21.21.147
+    server: 104.20.74.141
     port: 80
     uuid: 2aa15c1a-9c11-46dc-8387-a6dd64bd1fb0
     udp: true
@@ -103,7 +99,7 @@ proxies:
 
   - name: 🇮🇩 Elastis
     type: vless
-    server: 104.21.21.147
+    server: 104.20.74.141
     port: 80
     uuid: 03e8f88a-b06f-494e-ed12-730b2eb3a41f
     udp: true
@@ -118,7 +114,7 @@ proxies:
 
   - name: 🇸🇬 Azure
     type: vless
-    server: 104.21.21.147
+    server: 104.20.74.141
     port: 80
     uuid: 4e19a967-b635-4dfc-8670-ce044a870fd6
     udp: true
@@ -133,7 +129,7 @@ proxies:
 
   - name: 🇸🇬 Digital Ocean
     type: vless
-    server: 104.21.21.147
+    server: 104.20.74.141
     port: 80
     uuid: c1446e03-a0de-481a-c988-7a14330e7baf
     udp: true
@@ -148,7 +144,7 @@ proxies:
 
   - name: 🇸🇬 HostSG
     type: vless
-    server: 104.21.21.147
+    server: 104.20.74.141
     port: 80
     uuid: 82b918d0-711e-4a4b-9d14-9d1d53797a2e
     udp: true
@@ -163,7 +159,7 @@ proxies:
 
   - name: 🇸🇬 Linode
     type: vless
-    server: 104.21.21.147
+    server: 104.20.74.141
     port: 80
     uuid: 406eade0-94c4-4a67-d1b1-af9740a78c01
     udp: true
@@ -178,7 +174,7 @@ proxies:
 
   - name: 🇸🇬 Melbicom
     type: vless
-    server: 104.21.21.147
+    server: 104.20.74.141
     port: 80
     uuid: 42d96426-9229-46bf-c234-9bb08930eedb
     udp: true
@@ -191,6 +187,33 @@ proxies:
       headers:
         Host: sg-melbi.vpn-ws.com
 
+# Shadowsocks v2ray
+  - name: Linode
+    type: ss
+    server: 104.20.74.141
+    port: 80
+    cipher: rc4-md5
+    password: vpnws
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: cdn.vpn-ws.com
+      path: /vpnws
+      mux: false
+
+  - name: Azure
+    type: ss
+    server: 104.20.74.141
+    port: 80
+    cipher: rc4-md5
+    password: vpnws
+    plugin: v2ray-plugin
+    plugin-opts:
+      mode: websocket
+      host: ze.vpn-ws.com
+      path: /vpnws
+      mux: false
+
 proxy-groups:
   - name: 🗂️ Group
     type: select
@@ -201,6 +224,8 @@ proxy-groups:
       - 📱 Sosmed
       - 🎮 Gaming
       - 🎞️ Streaming
+      - SS V2ray
+      - DIRECT
 
   - name: 📌 Select
     type: select
@@ -279,6 +304,12 @@ proxy-groups:
       - 🇸🇬 Linode
       - 🇸🇬 HostSG
       - 🇸🇬 Melbicom
+
+  - name: SS V2ray
+    type: select
+    proxies:
+      - Linode
+      - Azure
 
 rule-providers:
   ⛔ Adblock:
