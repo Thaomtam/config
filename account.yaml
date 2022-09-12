@@ -1,0 +1,53 @@
+proxies:
+  - name: Vless-WS LQ
+    server: saoke.site
+    port: 443
+    type: vless
+    uuid: 3feff3a5-6bf4-42f8-aede-635f0ce5ccd8
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: dl.kgvn.garenanow.com
+    network: ws
+    ws-opts: 
+      path: /PXXZ61
+      headers: 
+        Host: dl.kgvn.garenanow.com
+    udp: true
+  - name: Vless-WS Tiktok
+    server: saoke.site
+    port: 443
+    type: vless
+    uuid: 3feff3a5-6bf4-42f8-aede-635f0ce5ccd8
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: v9.byteicdn.com
+    network: ws
+    ws-opts: 
+      path: /PXXZ61
+      headers: 
+        Host: v9.byteicdn.com
+    udp: true
+  - name: Vless-Xtls Tiktok
+    type: vless
+    server: saoke.site
+    port: 443
+    uuid: 3feff3a5-6bf4-42f8-aede-635f0ce5ccd8
+    network: tcp
+    servername: v9.byteicdn.com
+    flow: xtls-rprx-direct 
+    skip-cert-verify: true    
+  - name: Vless-Xtls LQ
+    type: vless
+    server: saoke.site
+    port: 443
+    uuid: 3feff3a5-6bf4-42f8-aede-635f0ce5ccd8
+    network: tcp
+    servername: dl.kgvn.garenanow.com
+    flow: xtls-rprx-direct 
+    skip-cert-verify: true   
+  - {name: Vmess-Ws Tiktok, server: saoke.site, port: 443, type: vmess, uuid: 3feff3a5-6bf4-42f8-aede-635f0ce5ccd8, sni: v9.byteicdn.com, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RL2QZ6UP, headers: {Host: v9.byteicdn.com}}}     
+  - {name: Vmess-Ws LQ, server: saoke.site, port: 443, type: vmess, uuid: 3feff3a5-6bf4-42f8-aede-635f0ce5ccd8, sni: dl.kgvn.garenanow.com, alterId: 0, cipher: auto, tls: 1, skip-cert-verify: true, udp: true, network: ws, ws-opts: {path: /RL2QZ6UP, headers: {Host: dl.kgvn.garenanow.com}}}     
+  - {name: Trojan LQ, server: saoke.site, port: 443, udp: true, type: trojan, password: admin123, sni: dl.kgvn.garenanow.com, skip-cert-verify: true}
+  - {name: Trojan Tiktok, server: saoke.site, port: 443, udp: true, type: trojan, password: admin123, sni: v9.byteicdn.com, skip-cert-verify: true}
