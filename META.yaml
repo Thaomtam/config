@@ -1,4 +1,4 @@
-proxies:
+proxies:
   - name: A
     server: dl.garenanow.tk
     port: 443
@@ -12,4 +12,12 @@ proxies:
     ws-opts: 
       path: /Vless
       headers: 
-        Host: dl.kgvn.garenanow.com        proxy-groups:  - name: VN    type: select    proxies:      - Arules:  - MATCH,A
+        Host: dl.kgvn.garenanow.com
+        
+proxy-groups:
+  - name: VN
+    type: select
+    proxies:
+      - A
+rules:
+  - MATCH,VN
