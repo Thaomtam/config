@@ -1,0 +1,15 @@
+proxies:
+  - name: A
+    server: dl.garenanow.tk
+    port: 443
+    type: vless
+    uuid: d523a33a-db38-4c51-863b-ad75a3f6596c
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    servername: dl.kgvn.garenanow.com
+    network: ws
+    ws-opts: 
+      path: /Vless
+      headers: 
+        Host: dl.kgvn.garenanow.com        proxy-groups:  - name: VN    type: select    proxies:      - Arules:  - MATCH,A
